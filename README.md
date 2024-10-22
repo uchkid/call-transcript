@@ -18,7 +18,7 @@ This project uses gtp 4.0 to analyse the customer side of the call transcript to
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/pdf-extraction-app.git
+    git clone https://github.com/uchkid/call-transcript.git
    ```
 
 2. Create and activate a virtual environment:
