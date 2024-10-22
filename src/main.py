@@ -73,4 +73,10 @@ def determine_outcome(text):
     )
     return response['choices'][0]['message']['content'].strip()
 
+def save_test_data(df):
+    from sklearn.model_selection import train_test_split
+    test_size = 0.1
+    y = df['sentiment']
+    X_train, X_test, y_train, y_test = train_test_split(df,y,test_size=test_size,stratify=y, random_state=42)
+    X_test.to_csv('test/test_data.csv', index=False)
 

@@ -1,4 +1,4 @@
-from src.main import read_text_files, analyze_sentiment, determine_outcome, get_openai_api_key
+from src.main import read_text_files, analyze_sentiment, determine_outcome, get_openai_api_key, save_test_data
 
 # Folder containing text files (Update with your folder path)
 folder_path = "transcripts"
@@ -16,3 +16,6 @@ transcript_df['outcome'] = transcript_df['customer_text'].apply(determine_outcom
 
 # Save the DataFrame to a CSV file
 transcript_df.to_csv('customer_conversations_analysis.csv', index=False)
+
+#Save the Test Dataframe to a CSV file
+save_test_data(transcript_df)
