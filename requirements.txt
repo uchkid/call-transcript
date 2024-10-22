@@ -2,3 +2,4 @@ pandas
 openai==0.28
 scikit-learn
 matplotlib
+WordCloud

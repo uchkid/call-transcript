@@ -53,8 +53,10 @@ def analyze_sentiment(text):
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant and text analyser that classifies customer sentiments."},
-            {"role": "user", "content": f"Analyze the sentiment of the following text, dont provide any justification, and respond strictly with only 'Positive', 'Negative', or 'Neutral':\n\n{text}"}
+            {"role": "system", 
+            "content": "You are a helpful assistant and text analyser that classifies customer sentiments."},
+            {"role": "user", 
+            "content": f"Analyze the sentiment of the following text, don't provide any justification, and respond strictly with only 'Positive', 'Negative', or 'Neutral':\n\n{text}"}
         ]
     )
     return response['choices'][0]['message']['content'].strip()
@@ -63,8 +65,10 @@ def determine_outcome(text):
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant and text analyser that determines the outcome of customer calls."},
-            {"role": "user", "content": f"Based on the following text, determine if the issue is resolved or if a follow-up action is needed. Dont provide justification, Respond with 'Issue Resolved' or 'Follow-up Needed':\n\n{text}"}
+            {"role": "system", 
+            "content": "You are a helpful assistant and text analyser that determines the outcome of customer calls."},
+            {"role": "user", 
+            "content": f"Based on the following text, determine if the issue is resolved or if a follow-up action is needed. Dont provide justification, Respond with 'Issue Resolved' or 'Follow-up Needed':\n\n{text}"}
         ]
     )
     return response['choices'][0]['message']['content'].strip()
